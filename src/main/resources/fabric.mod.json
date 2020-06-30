@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "blocknbass-audio",
+  "version": "${version}",
+
+  "name": "Block & Bass Audio",
+  "description": "Block & Bass audio mod",
+  "authors": [
+    "Block & Bass Dev Team"
+  ],
+  "contact": {
+    "homepage": "https://blocknbass.nl",
+    "sources": "https://github.com/BlocknBass/blocknbass-audio"
+  },
+
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "nl.blocknbass.audio.BlocknBassAudio"
+    ],
+    "blocknbass-mod": [
+      "nl.blocknbass.audio.BlocknBassModAudio"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.15.x",
+    "blocknbass-core": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
