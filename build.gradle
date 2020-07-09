@@ -36,7 +36,11 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	compile "com.google.code.findbugs:jsr305:3.0.2"
+	provided "javazoom:jlayer:1.0.1"
+	provided "com.googlecode.soundlibs:tritonus-share:0.3.7.4"
+	provided "com.squareup.okhttp3:okhttp:4.7.2"
 	provided 'com.google.protobuf:protobuf-java:3.7.0'
+	provided "com.googlecode.soundlibs:mp3spi:1.9.5-1"
 	compile files("libs/blocknbass-core-0.0.1-dev.jar")
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
