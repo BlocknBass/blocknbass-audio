@@ -16,6 +16,7 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
+import java.nio.Buffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 
@@ -134,7 +135,8 @@ public class AudioPlayer implements Runnable {
 
             AL10.alSourcef(this.source.get(0), AL10.AL_GAIN, 9.0f * MinecraftClient.getInstance().options.getSoundVolume(SoundCategory.RECORDS));
             AL10.alGenBuffers(this.buffer);
-            ByteBuffer data = (ByteBuffer) BufferUtils.createByteBuffer(n).order(ByteOrder.LITTLE_ENDIAN).put(databuffer, 0, n).flip();
+	    Buffer data_buf = BufferUtils.createByteBuffer(n).order(ByteOrder.LITTLE_ENDIAN).put(databuffer, 0, n);
+            ByteBuffer data = (ByteBuffer) data_buf.flip();
             AL10.alBufferData(this.buffer.get(0), format.getChannels() > 1 ? AL10.AL_FORMAT_STEREO16 : AL10.AL_FORMAT_MONO16,
                     data, (int)format.getSampleRate());
             alError();
